@@ -32,3 +32,7 @@ choco install keepass
 choco install sudo
 choco install rambox
 choco install renamemaster
+choco install hashcheck
+choco install compactgui
+
+
