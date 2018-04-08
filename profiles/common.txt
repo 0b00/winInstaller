@@ -36,3 +36,21 @@ choco install hashcheck
 choco install compactgui
 
 
+
+# Enable execution of remote commands
+# Turn off People in Taskbar
+$registryPath = 'HKLM:SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
+If (-Not (Test-Path $registryPath)) {
+    New-Item -Path $registryPath | Out-Null
+}
+Set-ItemProperty -Path $registryPath -Name LocalAccountTokenFilterPolicy -Type DWord -Value 1
+
+
+# Remove ' - Shortcut' from new links
+$registryPath = 'HKCU:Software\Microsoft\Windows\CurrentVersion\Explorer\NamingTemplates'
+If (-Not (Test-Path $registryPath)) {
+    New-Item -Path $registryPath | Out-Null
+}
+Set-ItemProperty -Path $registryPath -Name ShortcutNameTemplate -Type String -Value "%s.lnk"
+
+
