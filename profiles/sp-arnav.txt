@@ -1,3 +1,5 @@
+Set-WindowsExplorerOptions -DisableShowFileExtensions
+
 choco install autohotkey
 choco install authy-desktop
 choco install inputdirector

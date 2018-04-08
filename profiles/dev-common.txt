@@ -1,3 +1,5 @@
+Set-WindowsExplorerOptions -EnableShowFileExtensions
+
 choco install angryip
 choco install dotnet
 choco install dotnetcore-sdk 
