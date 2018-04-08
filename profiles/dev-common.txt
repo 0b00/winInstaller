@@ -1,6 +1,7 @@
 choco install NugetPackageManager
 choco install SourceTree
 choco install VisualStudioCode
+choco install git
 choco install poshgit
 choco install nodejs
 choco install npm
@@ -11,3 +12,6 @@ choco install visualstudio2017-installer
 choco install rdpwrapper
 choco install tinycc
 choco install imdisk-toolkit 
+choco install imdisk-toolkit 
+choco install nirlauncher
+choco install angryip
