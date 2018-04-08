@@ -5,7 +5,8 @@ $profileDir = "http://$profileHost/Install/profiles";
 Write-Output 'Install Chocolatey';
 if (-Not (Get-Command choco -ErrorAction SilentlyContinue)) {
     Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
-} else {
+}
+else {
     Write-Output '  Chocolatey already installed';
 }
 
@@ -13,26 +14,17 @@ Write-Output 'Install BoxStarter';
 if ((choco list -lo | where { $_.ToLower().StartsWith("Boxstarter".ToLower()) } | measure).Count -eq 0) {
     &choco install Boxstarter -y;
     &'C:\ProgramData\Boxstarter\BoxstarterShell.ps1';
-} else {
+}
+else {
     Write-Output '  Boxstarter already installed';
 }
 
-$sysType = "";
-while($sysType -eq "") {
-    Write-Output "System Type";
-    Write-Output "  Profiles:";
-    Write-Output "  1 - Standard";
-    Write-Output "  2 - Dev: Common";
-    Write-Output "  3 - Dev: Mobile";
-    Write-Output "  4 - Dev: Doc";
-    Write-Output "  5 - Dev: Multimedia";
-    Write-Output "";
-    Write-Output "  Special:";
-    Write-Output "  A - Arnav"
-    Write-Output "  I - Ishan"
-    Write-Output "";
-    Write-Output "  X - Exit"
-    Write-Output "";
+function Run-BoxStarter ($packageType) {
+    $packageName = "$profileDir/$packageType.txt";
+    Write-Host $packageName;
+    Import-Module Boxstarter.Chocolatey
+    Install-BoxstarterPackage -PackageName $packageName -DisableReboots
+}
 
 $endloop = $False;
 
@@ -54,7 +46,7 @@ $sysType = "";
         Write-Output "  A - Arnav";
         Write-Output "  I - Ishan";
     Write-Output "";
-    Write-Output "  X - Exit"
+        Write-Output "  X - Exit";
     Write-Output "";
 
     $sysType = read-host "Select profiles(s)";
@@ -100,7 +92,7 @@ Write-Host $nums;
     }
 }
 
-Write-Output "$profileDir/common.txt";
+# Write-Output "$profileDir/common.txt";
 
 #$sysType = $Host.UI.PromptForChoice("System type", "What type of system is this?", [System.Management.Automation.Host.ChoiceDescription[]]@("&Standard", "&Developerment"), 0);
 
