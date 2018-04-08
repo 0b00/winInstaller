@@ -1,0 +1,6 @@
+choco install image-composite-editor
+choco install exiftool
+choco install ffmpeg 
+choco install audacity
+choco install audacity-lame 
+choco install audacity-ffmpeg 

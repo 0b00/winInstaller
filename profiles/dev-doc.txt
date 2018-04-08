@@ -1,0 +1,5 @@
+choco install pandoc
+choco install miktex
+choco install notepad2
+
+choco install anaconda3

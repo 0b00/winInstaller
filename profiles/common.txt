@@ -1,0 +1,28 @@
+Set-ExplorerOptions -showHiddenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
+Set-TaskbarSmall
+Enable-RemoteDesktop
+Disable-BingSearch
+Enable-MicrosoftUpdate
+Install-WindowsUpdate -AcceptEula
+choco install systenternals
+choco install 7zip.install
+choco install sumatrapdf.install
+choco install smplayer
+choco install notepadplusplus.install
+choco install notepad2-mod
+choco install winscp.install
+choco install kitty
+choco install sharex
+choco install lockhunter
+choco install filezilla
+choco install fsviewer
+choco install treesizefree
+choco install windirstat
+choco install teracopy 
+#choco install paint.net
+choco install teamviewer
+choco install RDCman
+choco install keepass
+choco install sudo
+choco install rambox
+choco install renamemaster
