@@ -1,9 +1,15 @@
-Set-ExplorerOptions -showHiddenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
-Set-TaskbarSmall
+#Windows Explorer
+Set-WindowsExplorerOptions -DisableOpenFileExplorerToQuickAccess -DisableShowFileExtensions -DisableShowFrequentFoldersInQuickAccess -DisableShowFullPathInTitleBar -DisableShowRecentFilesInQuickAccess -EnableExpandToOpenFolder -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles
+Set-TaskbarOptions -Combine Never -Dock Bottom -Lock -Size Small
+Set-CornerNavigationOptions -EnableUsePowerShellOnWinX
+
 Enable-RemoteDesktop
-Disable-BingSearch
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -AcceptEula
+
+Disable-BingSearch
+Disable-GameBarTips
+
 choco install systenternals
 choco install 7zip.install
 choco install sumatrapdf.install
