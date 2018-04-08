@@ -1,6 +1,6 @@
-﻿param([String]$profileHost='198.18.8.56')
+param([String]$profileHost = 'Install')
 
-$profileDir = "http://$profileHost/Install";
+$profileDir = "http://$profileHost/Install/profiles";
 
 Write-Output 'Install Chocolatey';
 if (-Not (Get-Command choco -ErrorAction SilentlyContinue)) {
