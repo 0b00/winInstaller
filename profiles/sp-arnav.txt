@@ -1,12 +1,12 @@
 choco install autohotkey
 choco install authy-desktop
-choco install javaruntime
 choco install inputdirector
 choco install filezilla.server
+choco install hugo
+choco install javaruntime
 choco install pushbullet
 choco uninstall sharex
 choco install snagit
 choco install spotify
 # choco install skype
 choco install whatsapp
-choco install hugo
