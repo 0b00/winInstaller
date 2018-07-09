@@ -10,7 +10,7 @@ Install-WindowsUpdate -AcceptEula
 Disable-BingSearch
 Disable-GameBarTips
 
-choco install systenternals
+choco install systinternals
 choco install 7zip.install
 choco install sumatrapdf.install
 choco install smplayer
@@ -25,7 +25,7 @@ choco install fsviewer
 choco install treesizefree
 choco install windirstat
 choco install teracopy 
-#choco install paint.net
+choco install paint.net
 choco install teamviewer
 choco install RDCman
 choco install keepass
