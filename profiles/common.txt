@@ -10,7 +10,7 @@ Install-WindowsUpdate -AcceptEula
 Disable-BingSearch
 Disable-GameBarTips
 
-choco install systinternals
+choco install sysinternals
 choco install 7zip.install
 choco install sumatrapdf.install
 choco install smplayer

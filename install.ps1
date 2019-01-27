@@ -1,6 +1,15 @@
-param([String]$profileHost = 'Install')
+Function Run-BoxStarter ($packageType) {
+    $packageName = "$profileDir/$packageType.txt";
+    Write-Host $packageName;
+    Import-Module Boxstarter.Chocolatey
+    Install-BoxstarterPackage -PackageName $packageName -DisableReboots
+}
 
-$profileDir = "http://$profileHost/Install/profiles";
+$profileDir = "http://localhost:61800/profiles";
+
+Write-Output 'Start Dependencies'
+Write-Output ' - Start Http Server [caddy]'
+Start-Process -FilePath .\mongoose.exe
 
 Write-Output 'Install Chocolatey';
 if (-Not (Get-Command choco -ErrorAction SilentlyContinue)) {
@@ -19,42 +28,35 @@ else {
     Write-Output '  Boxstarter already installed';
 }
 
-function Run-BoxStarter ($packageType) {
-    $packageName = "$profileDir/$packageType.txt";
-    Write-Host $packageName;
-    Import-Module Boxstarter.Chocolatey
-    Install-BoxstarterPackage -PackageName $packageName -DisableReboots
-}
-
 $endloop = $False;
 
 while (-Not ($endloop)) {
 
-$sysType = "";
-    while ($sysType -eq "") {
-        Write-Output "";
-        Write-Output "";
-    Write-Output "System Type";
-    Write-Output "  Profiles:";
-    Write-Output "  1 - Standard";
-    Write-Output "  2 - Dev: Common";
-    Write-Output "  3 - Dev: Mobile";
-    Write-Output "  4 - Dev: Doc";
-    Write-Output "  5 - Dev: Multimedia";
-    Write-Output "";
-    Write-Output "  Special:";
-        Write-Output "  A - Arnav";
-        Write-Output "  I - Ishan";
-    Write-Output "";
-        Write-Output "  X - Exit";
-    Write-Output "";
+	$sysType = "";
 
-    $sysType = read-host "Select profiles(s)";
-}
+	while ($sysType -eq "") {
+			Write-Output "";
+			Write-Output "";
+		Write-Output "System Type";
+		Write-Output "  Profiles:";
+		Write-Output "  1 - Standard";
+		Write-Output "  2 - Dev: Common";
+		Write-Output "  3 - Dev: Mobile";
+		Write-Output "  4 - Dev: Doc";
+		Write-Output "  5 - Dev: Multimedia";
+		Write-Output "";
+		Write-Output "  Special:";
+			Write-Output "  A - Arnav";
+			Write-Output "  I - Ishan";
+		Write-Output "";
+			Write-Output "  X - Exit";
+		Write-Output "";
+
+		$sysType = read-host "Select profiles(s)";
+	}
 
     $nums = $sysType.split(",");
-
-Write-Host $nums;
+	Write-Host $nums;
 
     ForEach ($answer in $nums) {
 
@@ -92,15 +94,8 @@ Write-Host $nums;
     }
 }
 
-# Write-Output "$profileDir/common.txt";
-
-#$sysType = $Host.UI.PromptForChoice("System type", "What type of system is this?", [System.Management.Automation.Host.ChoiceDescription[]]@("&Standard", "&Developerment"), 0);
-
-#Install-BoxstarterPackage -PackageName "common.txt" -DisableReboots
-#if ($sysType -eq 0) {
-#    &choco install firefox -y
-#}
-
-#if ($sysType -eq 1) {
-#    Install-BoxstarterPackage -PackageName http://jain56/Install/dev.txt -DisableReboots
-#}
+Write-Output Restarting Computer
+shutdown -r -t 10
+Write-Output Press Any key to abort
+timeout 30
+shutdown -a
