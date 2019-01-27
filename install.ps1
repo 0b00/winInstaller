@@ -5,7 +5,7 @@ Function Run-BoxStarter ($packageType) {
     Install-BoxstarterPackage -PackageName $packageName -DisableReboots
 }
 
-$profileDir = "http://localhost:61800/profiles";
+$profileDir = "http://localhost:80800/profiles";
 
 Write-Output 'Start Dependencies'
 Write-Output ' - Start Http Server [caddy]'
