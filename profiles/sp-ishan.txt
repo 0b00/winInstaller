@@ -1,1 +1,14 @@
+Set-WindowsExplorerOptions -EnableShowFileExtensions
+
 choco install papercut
+choco install sharex
+choco install paint.net
+
+# DEV
+choco install dotnet
+choco install dotnetcore-sdk 
+choco install nodejs
+choco install npm
+choco install linqpad
+choco install NugetPackageManager
+

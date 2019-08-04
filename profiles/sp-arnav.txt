@@ -5,10 +5,16 @@ choco install authy-desktop
 choco install inputdirector
 choco install filezilla.server
 choco install hugo
-choco install javaruntime
+# choco install javaruntime
 choco install pushbullet
 choco uninstall sharex
 choco install snagit
 choco install spotify
 # choco install skype
 choco install whatsapp
+choco install hashcheck
+choco install compactgui
+
+# DEV
+choco install nirlauncher
+#choco install SourceTree

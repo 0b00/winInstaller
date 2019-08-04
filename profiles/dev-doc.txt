@@ -1,8 +1,7 @@
 choco install pandoc
 choco install miktex
-choco install notepad2
+# choco install notepad2-mod
 
-choco install visualstudiocode
-choco install vscode-markdownlint
+# choco install visualstudiocode
 
 choco install miniconda3

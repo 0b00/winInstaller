@@ -1,5 +1,5 @@
 #Windows Explorer
-Set-WindowsExplorerOptions -DisableOpenFileExplorerToQuickAccess -DisableShowFileExtensions -DisableShowFrequentFoldersInQuickAccess -DisableShowFullPathInTitleBar -DisableShowRecentFilesInQuickAccess -EnableExpandToOpenFolder -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles
+Set-WindowsExplorerOptions -DisableOpenFileExplorerToQuickAccess -DisableShowFrequentFoldersInQuickAccess -DisableShowFullPathInTitleBar -DisableShowRecentFilesInQuickAccess -EnableExpandToOpenFolder -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles
 Set-TaskbarOptions -Combine Never -Dock Bottom -Lock -Size Small
 Set-CornerNavigationOptions -EnableUsePowerShellOnWinX
 
@@ -10,30 +10,26 @@ Install-WindowsUpdate -AcceptEula
 Disable-BingSearch
 Disable-GameBarTips
 
-choco install sysinternals
 choco install 7zip.install
-choco install sumatrapdf.install
-choco install smplayer
-choco install notepadplusplus.install
-choco install notepad2-mod
-choco install winscp.install
-choco install kitty
-choco install sharex
-choco install lockhunter
+choco install bulkrenameutility 
+choco install keepass
 choco install filezilla
 choco install fsviewer
+choco install inputdirector
+choco install kitty
+choco install notepadplusplus.install
+choco install notepad2-mod
+choco install RDCman
+choco install lockhunter
+choco install smplayer
+choco install sudo
+choco install sumatrapdf.install
+choco install teamviewer
+choco install teracopy 
 choco install treesizefree
 choco install windirstat
-choco install teracopy 
-choco install paint.net
-choco install teamviewer
-choco install RDCman
-choco install keepass
-choco install sudo
-choco install rambox
-choco install renamemaster
-choco install hashcheck
-choco install compactgui
+choco install winscp.install
+choco install sysinternals
 
 
 

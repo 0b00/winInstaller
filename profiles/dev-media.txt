@@ -4,3 +4,4 @@ choco install ffmpeg
 choco install audacity
 choco install audacity-lame 
 choco install audacity-ffmpeg 
+choco install handbrake

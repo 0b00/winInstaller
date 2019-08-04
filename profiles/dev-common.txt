@@ -1,18 +1,9 @@
-Set-WindowsExplorerOptions -EnableShowFileExtensions
-
-choco install angryip
-choco install dotnet
-choco install dotnetcore-sdk 
-choco install nodejs
-choco install npm
+choco install nmap
 choco install imdisk-toolkit 
-choco install linqpad
-choco install nirlauncher
-choco install NugetPackageManager
 choco install git
+choco install git-fork 
 choco install poshgit
 choco install rdpwrapper
-choco install SourceTree
 choco install tinycc
-choco install visualstudio2017-installer
-choco install VisualStudioCode
+choco install vscode
+choco install vscode-settingssync
